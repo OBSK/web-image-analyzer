@@ -1,0 +1,25 @@
+{
+  "name": "image-analyzer-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest --runInBand"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "@google-cloud/vision": "^5.3.5",
+    "@upstash/ratelimit": "^2.0.8",
+    "@upstash/redis": "^1.37.0",
+    "busboy": "^1.6.0",
+    "joi": "^18.1.1"
+  },
+  "devDependencies": {
+    "jest": "^30.3.0",
+    "serverless": "^4.33.0",
+    "serverless-offline": "^14.5.0"
+  }
+}

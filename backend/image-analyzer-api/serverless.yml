@@ -1,0 +1,29 @@
+
+org: obskcloudeast
+app: image-analyzer-api
+service: image-analyzer-api
+
+provider:
+  name: aws
+  runtime: nodejs20.x
+  region: us-east-1
+  stage: dev
+  environment:
+    GOOGLE_CLOUD_PROJECT_ID: ${env:GOOGLE_CLOUD_PROJECT_ID}
+    GOOGLE_APPLICATION_CREDENTIALS_JSON: ${env:GOOGLE_APPLICATION_CREDENTIALS_JSON}
+    UPSTASH_REDIS_REST_URL: ${env:UPSTASH_REDIS_REST_URL}
+    UPSTASH_REDIS_REST_TOKEN: ${env:UPSTASH_REDIS_REST_TOKEN}
+    MAX_FILE_SIZE_MB: 5
+
+functions:
+  analyze:
+    handler: src/handlers/analyzeHandler.handler
+    timeout: 30
+    memorySize: 512
+    events:
+      - httpApi:
+          path: /api/analyze
+          method: post
+
+plugins:
+  - serverless-offline
