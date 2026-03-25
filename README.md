@@ -18,3 +18,7 @@ Aplicación fullstack que permite analizar imágenes utilizando inteligencia art
 image-analyzer/
 - frontend/image-analyzer
 - backend/image-analyzer-api
+
+## 🌐 Live Demo
+
+👉 [Ver aplicación en vivo](https://web-image-analyzer.vercel.app/)
